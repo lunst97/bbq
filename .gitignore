@@ -38,3 +38,6 @@ yarn-debug.log*
 .DS-Store
 */.DS_Store
 .idea
+.DS_Store
+/app/frontend/.DS_Store
+/app/frontend/styles/.DS_Store
