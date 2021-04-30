@@ -9,6 +9,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
 gem 'devise'
 
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
