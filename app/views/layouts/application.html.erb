@@ -3,11 +3,12 @@
   <head>
     <title>Bbq</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <%= csrf_meta_tag %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+
   </head>
 
   <body>
@@ -15,11 +16,23 @@
     <div class="container">
       <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
 
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div class="navbar navbar-expand-lg ">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Link1", "/path1"  %></li>
-          <li><%= link_to "Link2", "/path2"  %></li>
-          <li><%= link_to "Link3", "/path3"  %></li>
+          <% if user_signed_in? %>
+              <li class="nav-item mr-3">
+                <%= link_to 'Профиль', current_user %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+              </li>
+          <% else %>
+            <li class="nav-item mr-3">
+              <%= link_to 'Войти', new_user_session_path %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -31,15 +44,6 @@
         <%= yield %>
       </div>
       <div class="col-lg-3">
-        <div class="well sidebar-nav">
-          <h3>Sidebar</h3>
-          <ul class="nav nav-list">
-            <li class="nav-header">Sidebar</li>
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
-        </div><!--/.well -->
       </div><!--/span-->
     </div><!--/row-->
 

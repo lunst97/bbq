@@ -7,6 +7,7 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 gem 'puma', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 5.0'
+gem 'devise'
 
 
 group :development, :test do
