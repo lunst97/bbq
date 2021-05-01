@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   # Задаем объект @user для шаблонов и экшенов
-  before_action :set_current_user, except: [:show]
+  before_action :set_current_user, only: %i[show edit update]
 
   # GET /users/1
   def show
@@ -12,6 +12,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def destroy
+
   end
 
   # PATCH/PUT /users/1

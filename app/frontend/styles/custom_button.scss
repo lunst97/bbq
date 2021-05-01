@@ -1,0 +1,88 @@
+$primary: #2979FF;   $primary_hover: #5693f9;
+$secondary: #08b8ff; $secondary_hover: #77d8ff;
+$success: #9CCC65;   $success_hover: #bae28c;
+$danger: #f44336;    $danger_hover: #ff6d62;
+$warning: #FFCA28;   $warning_hover: #ffda69;
+$info: #03d5e2;      $info_hover: #16eefb;
+$light: #FFF;        $light_hover: #FFF;
+$dark: #212121;      $dark_hover: #212121;
+
+.btn{
+  border-radius:20px;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border:0px!important;
+  font-size: 0.95rem;
+  padding: .475rem .85rem;
+  &:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 5px 10px rgba(0,0,0,0.14);
+  }
+  &.btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius:26px;
+  }
+  &.btn-sm {
+    padding: .35rem .55rem;
+    font-size: .8rem;
+    line-height: 1.5;
+    border-radius:14px;
+  }
+
+  &.btn-primary{
+    background-color: $primary;
+    &:hover{
+      background-color: $primary_hover;
+    }
+  }
+
+  &.btn-secondary{
+    background-color: $secondary;
+    &:hover{
+      background-color: $secondary_hover;
+    }
+  }
+
+  &.btn-success{
+    background-color: $success;
+    &:hover{
+      background-color: $success_hover;
+    }
+  }
+
+  &.btn-danger{
+    background-color: $danger;
+    &:hover{
+      background-color: $danger_hover;
+    }
+  }
+
+  &.btn-warning{
+    background-color: $warning;
+    &:hover{
+      background-color: $warning_hover;
+    }
+  }
+
+  &.btn-info{
+    background-color: $info;
+    &:hover{
+      background-color: $info_hover;
+    }
+  }
+
+  &.btn-light{
+    background-color: $light;
+  }
+
+  &.btn-dark{
+    background-color: $dark;
+  }
+
+  &.btn-link{
+    box-shadow:none;
+    font-weight:500;
+  }
+
+}
