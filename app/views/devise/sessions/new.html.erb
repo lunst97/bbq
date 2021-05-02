@@ -1,8 +1,8 @@
-<main class="col-md-6">
+<%= render "devise/shared/error_messages", resource: resource %>
+<main class="col-md-12 form-sing-in">
   <div class="form-group">
     <h1 class="text-center">Вход</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
       <label for="exampleInputEmail1">Email</label>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Введите email', class: 'form-control' %>
       </div>

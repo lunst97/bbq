@@ -3,11 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
-gem 'puma', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'webpacker', '~> 5.0'
 gem 'devise'
+gem 'devise-i18n'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'uglifier', '>= 1.3.0'
+gem 'russian'
+gem 'webpacker', '~> 5.0'
 
 group :production do
   gem 'pg'
