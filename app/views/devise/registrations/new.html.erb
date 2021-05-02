@@ -1,41 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5 col-md-6">
-      <h1 class="text-center">Регистрация</h1>
-      <div class="myform form">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          </div>
-          <div class="form-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control my-input' %>
-          </div>
-          <div class="form-group">
-            <% if @minimum_password_length %>
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль (минимум #{@minimum_password_length} символов", class: 'form-control my-input bi bi-lock' %>
-            <% else %>
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль", class: 'form-control my-input' %>
-            <% end %>
-          </div>
-          <div class="form-group">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Подтверждение пароля', class: 'form-control my-input' %>
-          </div>
-          <div class="actions text-center">
-            <%= f.submit "Зарегистрироваться", class: 'btn btn-primary m-1 ' %>
-          </div>
-          <% end %>
-          <div class="col-md-12 ">
-            <div class="login-or">
-              <hr class="hr-or">
-              <span class="span-or">или</span>
-            </div>
-          </div>
-        <div class="actions text-center">
-          <%= render "devise/shared/links"%>
+<main class="col-md-6">
+  <div class="form-group">
+    <h1 class="text-center">Регистрация</h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <label for="exampleInputEmail1">Email</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Введите email', class: 'form-control' %>
+      <small id="emailHelp" class="form-text text-muted">Мы никогда не будем делиться вашей электронной почтой ни с кем другим.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
+        <% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль (минимум #{@minimum_password_length} символов", class: 'form-control' %>
+        <% else %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль", class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Подтверждение пароля', class: 'form-control' %>
+      </div>
+      <div class="actions text-center">
+        <%= f.submit "Зарегистрироваться", class: 'btn btn-primary m-1 ' %>
+      </div>
+      <div class="col-md-12 ">
+        <div class="login-or">
+          <hr class="hr-or">
+          <span class="span-or">или</span>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
+      <div class="mt-4 mb-4 text-center">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+    </main>
 
 

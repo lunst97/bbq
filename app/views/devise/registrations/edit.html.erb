@@ -1,40 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5 col-md-6">
-      <h2 class="text-center">Редактирование <%= current_user.name %></h2>
-      <div class="myform form">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          </div>
-          <div class="form-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control my-input' %>
-          </div>
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>В настоящее время ждем подтверждения: <%= resource.unconfirmed_email %></div>
-          <% end %>
-          <% if @minimum_password_length %>
-            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Новый пароль (минимум #{@minimum_password_length} символов", class: 'form-control my-input bi bi-lock' %>
-            <i>(оставьте пустым, если вы не хотите его менять)</i>
-          <% else %>
-            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Новый пароль", class: 'form-control my-input' %>
-            <i>(оставьте пустым, если вы не хотите его менять)</i>
-          <% end %>
-          <div class="form-group">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Подтверждение пароля', class: 'form-control my-input' %>
-          </div>
-
-          <div class="form-group">
-            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: 'Текущий пароль', class: 'form-control my-input' %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "Редактировать", class: 'btn btn-primary m-1' %>
-          </div>
+<main class="col-md-6">
+  <div class="form-group">
+    <h1 class="text-center">Редактирование <%= current_user.name %></h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <label for="exampleInputEmail1">Email</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control my-input' %>
+      </div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>В настоящее время ждем подтверждения: <%= resource.unconfirmed_email %></div>
+      <% end %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
+        <% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль (минимум #{@minimum_password_length} символов", class: 'form-control' %>
+        <% else %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль", class: 'form-control' %>
         <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Подтверждение пароля', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Введите текущий пароль</label>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: 'Текущий пароль', class: 'form-control my-input' %>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Редактировать", class: 'btn btn-primary m-1' %>
+      </div>
+      <div class="col-md-12 ">
+        <div class="login-or">
+          <hr class="hr-or">
+          <span class="span-or">или</span>
+        </div>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
+    </div>
+    <div class="text-center">
+      <%= link_to "Вернуться", :back, class: 'btn btn-link m-1' %>
+    </div>
+    </main>
 
-        <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
-
-        <%= link_to "Вернуться", :back, class: 'btn btn-sm btn-link m-1' %>
-  </div>
-</div>
-</div>
