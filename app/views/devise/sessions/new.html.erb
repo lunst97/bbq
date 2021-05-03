@@ -1,34 +1,42 @@
 <%= render "devise/shared/error_messages", resource: resource %>
-<main class="col-md-12 form-sing-in">
-  <div class="form-group">
-    <h1 class="text-center">Вход</h1>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <label for="exampleInputEmail1">Email</label>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Введите email', class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Пароль</label>
-        <div class="form-group">
-          <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Пароль', class: 'form-control my-input' %>
-        </div>
-      </div>
-      <% if devise_mapping.rememberable? %>
-        <div class="form-group form-check">
-          <%= f.check_box :remember_me, class: 'form-check-input' %>
-          <%= f.label :remember_me, 'Запомнить меня', class: 'form-check-lable' %>
-        </div>
-      <% end %>
-      <div class="actions text-center">
-        <%= f.submit "Войти", class: 'btn btn-lg btn-danger m-1' %>
-      </div>
-      <div class="col-md-12 ">
-        <div class="login-or">
-          <hr class="hr-or">
-          <span class="span-or">или</span>
-        </div>
-      </div>
-      <div class="mt-4 mb-4 text-center">
-        <%= render "devise/shared/links" %>
-      </div>
-    <% end %>
-    </main>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <section class="container-fluid">
+    <section class="row justify-content-center">
+      <section class="col-sm-12 col-md-8 col-lg-7 col-xl-6">
+        <main class="form-container mt-5 mb-5">
+          <div class="form-group">
+            <h1 class="text-center">Вход</h1>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('activerecord.attributes.user.email'), class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Пароль</label>
+            <div class="form-group">
+              <%= f.password_field :password, autocomplete: "current-password", placeholder: t('activerecord.attributes.user.password'), class: 'form-control my-input' %>
+            </div>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group form-check">
+              <%= f.check_box :remember_me, class: 'form-check-input' %>
+              <%= f.label :remember_me, t('activerecord.attributes.user.remember_me'), class: 'form-check-lable' %>
+            </div>
+          <% end %>
+          <div class="actions text-center">
+            <%= f.submit "Войти", class: 'btn btn-lg btn-danger m-1' %>
+          </div>
+          <div class="col-md-12 ">
+            <div class="login-or">
+              <hr class="hr-or">
+              <span class="span-or">или</span>
+            </div>
+          </div>
+          <div class="mt-4 mb-4 text-center">
+            <%= render "devise/shared/links" %>
+          </div>
+        </main>
+      </section>
+    </section>
+  </section>
+<% end %>

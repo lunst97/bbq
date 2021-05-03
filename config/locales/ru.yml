@@ -8,12 +8,17 @@ ru:
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
+        current_password: 'Текущий пароль'
         password_confirmation: 'Подтверждение пароля'
+        password_min_letterts_start: 'Пароль (минимум'
+        password_min_letterts_finish: 'символов)'
+        remember_me: 'Запомнить меня'
       event:
         title: 'Название'
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        confirmation: 'Вы действительно хотите удалить событие?'
   controllers:
     events:
       created: 'Событие было успешно создано'

@@ -1,27 +1,30 @@
 <%= render "devise/shared/error_messages", resource: resource %>
-<main class="col-md-6 form-sing-in">
-  <div class="form-group">
-    <h1 class="text-center">Забыли пароль?</h1>
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <label for="exampleInputEmail1">Email</label>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Введите email', class: 'form-control my-input'%>
-      </div>
-      <div class="actions text-center">
-        <%= f.submit "Запросить пароль", class: 'btn btn-warning m-1'%>
-      </div>
-      <div class="col-md-12 ">
-        <div class="login-or">
-          <hr class="hr-or">
-          <span class="span-or">или</span>
-        </div>
-      </div>
-      <div class="mt-4 mb-4 text-center">
-        <%= render "devise/shared/links" %>
-      </div>
-    <% end %>
-    </main>
-
-
-
-
-
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <section class="container-fluid">
+    <section class="row justify-content-center">
+      <section class="col-sm-12 col-md-8 col-lg-7 col-xl-6">
+        <main class="form-container mt-5 mb-5">
+          <div class="form-group">
+            <h1 class="text-center">Забыли пароль?</h1>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Введите email</label>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('activerecord.attributes.user.email'), class: 'form-control my-input' %>
+          </div>
+          <div class="actions text-center">
+            <%= f.submit "Запросить пароль", class: 'btn btn-warning m-1' %>
+          </div>
+          <div class="col-md-12 ">
+            <div class="login-or">
+              <hr class="hr-or">
+              <span class="span-or">или</span>
+            </div>
+          </div>
+          <div class="mt-4 mb-4 text-center">
+            <%= render "devise/shared/links" %>
+          </div>
+        </main>
+      </section>
+    </section>
+  </section>
+<% end %>

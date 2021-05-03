@@ -1,30 +1,41 @@
 <%= form_for(@event) do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
-<main class="form-sing-in">
-  <div class="form-group">
-    <%= f.label :title, 'Название' %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+  <section class="container-fluid">
+    <section class="row justify-content-center">
+      <section class="col-sm-12 col-md-8 col-lg-7 col-xl-6">
+        <main class="form-container mt-5 mb-5">
+          <div class="form-group">
+            <h1 class="text-center">Редактирование события</h1>
+          </div>
+          <div class="form-group">
+            <%= f.label :title, t('activerecord.attributes.event.title') %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
 
-  <div class="form-group">
-    <%= f.label :address, 'Адрес' %>
-    <%= f.text_field :address, class: 'form-control' %>
-  </div>
+          <div class="form-group">
+            <%= f.label :address, t('activerecord.attributes.event.address') %>
+            <%= f.text_field :address, class: 'form-control' %>
+          </div>
 
-  <div class="form-group">
-    <%= f.label :datetime, 'Дата события' %>
-    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
-  </div>
+          <div class="form-group">
+            <%= f.label :datetime, t('activerecord.attributes.event.datetime') %>
+            <p><%= f.text_field :datetime, class: 'form-control'%></p>
+          </div>
 
-  <div class="form-group">
-    <%= f.label :description, 'Описание' %>
-    <%= f.text_area :description, class: 'form-control ' %>
-  </div>
+          <div class="form-group">
+            <%= f.label :description, t('activerecord.attributes.event.description') %>
+            <%= f.text_area :description, class: 'form-control ' %>
+          </div>
 
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
-  </div>
-  <% end %>
-</main>
+          <div class="actions">
+            <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+            или <%= link_to 'вернуться', :back %>
+          </div>
+        </main>
+      </section>
+    </section>
+  </section>
+<% end %>
+
+
 

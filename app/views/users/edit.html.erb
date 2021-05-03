@@ -1,9 +1,15 @@
-<main class="col-md-6 form-sing-in">
-  <div class="form-group">
-    <h1 class="text-center">Редактирование профиля</h1>
-    <%= render 'form' %>
-    <p class="mt-4 mb-4">
-      <%= link_to 'Сменить пароль', edit_user_registration_path %>
-    </p>
-  </div>
-</main>
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-sm-12 col-md-8 col-lg-7 col-xl-6">
+      <main class="form-container mt-5 mb-5">
+        <div class="form-group">
+          <h1 class="text-center">Редактирование профиля</h1>
+          <%= render 'form' %>
+          <p class="mt-4 mb-4">
+            <%= link_to 'Сменить пароль', edit_user_registration_path %>
+          </p>
+        </div>
+      </main>
+    </section>
+  </section>
+</section>
