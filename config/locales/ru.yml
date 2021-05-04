@@ -20,7 +20,8 @@ ru:
         description: 'Описание'
         confirmation: 'Вы действительно хотите удалить событие?'
       subscriptions:
-        errors: 'Нельзя подписываться на свое событие!'
+        errors_user_subscription: 'Нельзя подписываться на свое событие!'
+        errors_user_email_subscription: 'Такой email уже зарегистрирован!'
   controllers:
     events:
       created: 'Событие было успешно создано'
