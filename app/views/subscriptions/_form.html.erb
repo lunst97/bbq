@@ -14,8 +14,8 @@
   <% end %>
 
   <div class="actions">
-    <% if @event.user == current_user %>
-      <%= f.label 'Вы создатель события', class: 'btn btn-danger disabled' %>
+    <% if @event.user != current_user %>
+      <%= f.label 'Вы создатель события', class: 'btn btn-danger ' %>
     <% else %>
       <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
     <% end %>
