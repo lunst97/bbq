@@ -11,6 +11,8 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
+  validate :current_user_not_subscription, if: -> { user.present? }
+
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
@@ -30,4 +32,9 @@ class Subscription < ApplicationRecord
       super
     end
   end
+
+  def current_user_not_subscription
+    errors.add(:user, message: I18n.t('activerecord.attributes.subscriptions.errors')) if event.user == user
+  end
+
 end

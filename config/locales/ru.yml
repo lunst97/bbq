@@ -19,6 +19,8 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
         confirmation: 'Вы действительно хотите удалить событие?'
+      subscriptions:
+        errors: 'Нельзя подписываться на свое событие!'
   controllers:
     events:
       created: 'Событие было успешно создано'
