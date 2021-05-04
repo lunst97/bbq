@@ -26,6 +26,14 @@ ru:
       destroyed: 'Событие было успешно удалено'
     users:
       updated: 'Профиль успешно обновлен'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: ' Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
   app:
     name: 'Шашлыки'
     company: 'Хороший программист 2021'
@@ -33,3 +41,13 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий'
+  views:
+    partials:
+      form_errors: 'В вышей форме'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'

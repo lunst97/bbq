@@ -1,16 +1,16 @@
 <% errors = model.errors %>
-
 <% if errors.any? %>
-  <div id="alert alert-danger">
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">
+      x
+    </button>
     <div class="lead buffer-bottom">
-      В вашей форме <%= I18n.t :mistake, count: errors.count
-
-                    %>
+      <%= t('views.partials.form_errors') %> <%= I18n.t :mistake, count: errors.count %>
     </div>
 
     <ul>
-      <% errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% errors.each do |error| %>
+        <li><%= error.attribute %> <%= error.message %></li>
       <% end %>
     </ul>
   </div>
