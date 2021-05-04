@@ -1,6 +1,6 @@
-<div class="buffer-buttom">
-  <p><%= comment.body %></p>
-  <p>
+<div class="buffer-buttom event-form">
+  <p class="event-comments"><%= comment.body %></p>
+  <div class="event-date">
     <span>
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
@@ -8,12 +8,14 @@
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
     </span>
-        <em><%= l comment.created_at, format: :short %></em>
-        <% if current_user_can_edit?(comment) %>
-          <%= link_to(
-                fa_icon('trash'), event_comment_path(comment.event, comment),
-                method: :delete, data: {confirm: t(".destroy_confirm")}
-              ) %>
-        <% end %>
-  </p>
+    <em><%= l comment.created_at, format: :short %></em>
+  </div>
+  <% if current_user_can_edit?(comment) %>
+    <div class="event-actions">
+      <%= link_to(
+            fa_icon('trash'), event_comment_path(comment.event, comment),
+            method: :delete, data: { confirm: t(".destroy_confirm") }
+          ) %>
+    </div>
+  <% end %>
 </div>
