@@ -32,10 +32,10 @@ class Subscription < ApplicationRecord
   end
 
   def check_user_for_duplicate_email
-    errors.add(:base, message: I18n.t('activerecord.attributes.subscriptions.errors_user_email_subscription')) if User.find_by(email: user_email).present?
+    errors.add(:base, :errors_user_email_subscription) if User.find_by(email: user_email).present?
   end
 
   def check_for_self_subscription
-    errors.add(:base, message: I18n.t('activerecord.attributes.subscriptions.errors_user_subscription')) if event.user == user
+    errors.add(:base, :check_for_self_subscription) if event.user == user
   end
 end

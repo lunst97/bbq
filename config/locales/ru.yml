@@ -1,5 +1,12 @@
 ru:
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              errors_user_email_subscription: 'такой email уже существует'
+              check_for_self_subscription: 'вы не можете подписаться на своё событие'
     models:
       user: 'Пользователь'
       event: 'Событие'
@@ -50,7 +57,6 @@ ru:
   views:
     partials:
       form_errors: 'В вышей форме'
-
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
