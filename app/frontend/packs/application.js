@@ -1,18 +1,9 @@
 import Rails from "@rails/ujs"
 import 'bootstrap/dist/js/bootstrap'
-import '../styles/application.scss'
-import '../scripts/datepicker'
-import '../scripts/datepicker.min'
-import '../scripts/i18n/datepicker.cs'
+import 'styles/application.scss'
+import 'air-datepicker/dist/js/datepicker.min'
+import 'air-datepicker/dist/js/i18n/datepicker.ru'
+import '../scripts/datetime'
+
 const images = require.context('../images', true)
 Rails.start()
-
-$(document).ready(function (){
-    $('#event_datetime').datepicker({
-        timepicker: true,
-        altField: "dd.mm.yyyy hh:mm",
-        timeFormat: "hh:ii",
-        todayButton: new Date(),
-        minDate: new Date()
-    })
-})
