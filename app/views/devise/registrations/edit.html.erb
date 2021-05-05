@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="text-center">
-            <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
+            <%= link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
           </div>
           <div class="text-center">
             <%= link_to "Вернуться", :back, class: 'btn btn-link m-1' %>
