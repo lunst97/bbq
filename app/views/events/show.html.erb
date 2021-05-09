@@ -27,14 +27,6 @@
 
   <div class="row">
     <div class="col-md-8">
-      <div class="event-photos">
-        <div class="event-photos-gallery">
-          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-        </div>
-        <div class="event-photo-form">
-          <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
-        </div>
-      </div>
       <div class="">
         <%= render partial: 'comments/form',
                    locals: { comment: @new_comment || @event.comments.build } %>
@@ -67,6 +59,20 @@
             subscription: @new_subscription || @event.subscriptions.build
           } %>
         </div>
+      </div>
+      <div class="event-photos">
+        <% if @event.subscribers.include?(current_user) %>
+          <div class="event-photo-form">
+            <h4 class="pt-2">Изменить фото:</h4>
+            <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
+          </div>
+        <% end %>
+        <% if @event.photos.count != 0 %>
+          <div class="event-photos-gallery">
+            <h4 class="pt-2">История изменения фото:</h4>
+            <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

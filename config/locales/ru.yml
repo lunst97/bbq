@@ -25,6 +25,7 @@ ru:
         password_min_letterts_finish: 'символов)'
         remember_me: 'Запомнить меня'
       event:
+        body: 'Комментарий'
         title: 'Название'
         address: 'Место проведения'
         datetime: 'Дата и время'

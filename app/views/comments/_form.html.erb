@@ -2,7 +2,7 @@
   <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
   <div class="form-group">
-    <%= f.label :body %>
+    <%= f.label :body, I18n.t('activerecord.attributes.event.body') %>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
 
