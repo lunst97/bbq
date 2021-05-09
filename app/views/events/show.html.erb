@@ -1,7 +1,8 @@
 <div class="event">
   <div class="event-info row">
     <div class="col-md-12">
-      <%= content_tag 'div', '', class: 'event-background',
+      <%= content_tag 'div', '',
+                      class: 'event-background',
                       style: "background-image: url(#{event_photo(@event)})" %>
 
       <div class="event-info-inner row">
@@ -27,7 +28,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-photos">
-        <div class="event-photo-gallery">
+        <div class="event-photos-gallery">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
         <div class="event-photo-form">
