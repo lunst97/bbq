@@ -41,3 +41,4 @@ yarn-debug.log*
 .DS_Store
 /app/frontend/.DS_Store
 /app/frontend/styles/.DS_Store
+public/uploads

@@ -10,6 +10,8 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'russian'
 gem 'webpacker', '~> 5.0'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :production do
   gem 'pg'

@@ -10,10 +10,14 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Подписка'
+      comment: 'Комментарий'
+      photo: 'Фотография'
     attributes:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Аватар'
         password: 'Пароль'
         current_password: 'Текущий пароль'
         password_confirmation: 'Подтверждение пароля'
@@ -26,6 +30,8 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
         confirmation: 'Вы действительно хотите удалить событие?'
+      photo:
+        photo: 'Фотография'
       subscriptions:
         errors_user_subscription: 'Нельзя подписываться на свое событие!'
         errors_user_email_subscription: 'Такой email уже зарегистрирован!'
@@ -44,6 +50,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то пошло не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
   app:
     name: 'Шашлыки'
     company: 'Хороший программист 2021'
