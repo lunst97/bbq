@@ -107,11 +107,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
-    address:              'in-v3.mailjet.com',
-    port:                 '587',
-    authentication:       'plain',
-    user_name:            ENV["MAILJET_API_KEY"],
-    password:             ENV["MAILJET_SECRET_KEY"],
+    address: 'in-v3.mailjet.com',
+    port: '587',
+    authentication: 'plain',
+    user_name: ENV['MAILJET_API_KEY'],
+    password: ENV['MAILJET_SECRET_KEY'],
     enable_starttls_auto: true
   }
 end
