@@ -30,5 +30,6 @@ module Bbq
     config.i18n.locale = :en
 
     config.generators.system_tests = nil
+    config.action_mailer.delivery_method = :mailjet
   end
 end
