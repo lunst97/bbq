@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
+      mailer_photo(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
@@ -41,6 +42,14 @@ class PhotosController < ApplicationController
   # Так как фотография — вложенный ресурс, в params[:event_id] рельсы
   # автоматически положат id события, которому принадлежит фотография
   # Это событие будет лежать в переменной контроллера @event
+  def mailer_photo(event, new_photo)
+    emails = (event.subscribers.pluck(:email) + [event.user.email] - [new_photo.user.email]).uniq
+
+    emails.each do |email|
+      EventMailer.photo(event, email, new_photo).deliver_now
+    end
+  end
+
   def set_event
     @event = Event.find(params[:event_id])
   end
