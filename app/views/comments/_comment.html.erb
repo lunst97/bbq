@@ -5,7 +5,7 @@
       <% if comment.user.present? %>
         <%= render partial: 'users/user', object: comment.user %>
       <% else %>
-        <em><strong><%= comment.user_name %></strong></em>
+        <strong class="p-lg-2"><%= comment.user_name %></strong>
       <% end %>
     </span>
     <em><%= l comment.created_at, format: :short %></em>

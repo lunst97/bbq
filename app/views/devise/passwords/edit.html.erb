@@ -9,7 +9,7 @@
             <%= f.hidden_field :reset_password_token %>
             <div class="form-group">
               <label for="exampleInputPassword1">Пароль</label>
-              <<% if @minimum_password_length %>
+              <% if @minimum_password_length %>
                 <%= f.password_field :password, autocomplete: "new-password", placeholder: "#{t('activerecord.attributes.user.password_min_letterts_start')} #{@minimum_password_length} #{t('activerecord.attributes.user.password_min_letterts_finish')}", class: 'form-control' %>
               <% else %>
                 <%= f.password_field :password, autocomplete: "new-password", placeholder: t('activerecord.attributes.user.password'), class: 'form-control' %>
