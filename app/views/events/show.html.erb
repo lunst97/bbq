@@ -61,12 +61,10 @@
         </div>
       </div>
       <div class="event-photos">
-        <% if @event.subscribers.include?(current_user) || @event.user.id == current_user.id %>
-          <div class="event-photo-form">
-            <h4 class="pt-2">Изменить фото:</h4>
-            <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
-          </div>
-        <% end %>
+        <div class="event-photo-form">
+          <h4 class="pt-2">Изменить фото:</h4>
+          <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
+        </div>
         <% if @event.photos.count != 0 %>
           <div class="event-photos-gallery">
             <h4 class="pt-2">История изменения фото:</h4>
