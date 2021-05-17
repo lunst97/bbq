@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
     all_emails = (event.subscriptions.pluck(:email) + [event.user.email] - [comment.user&.email]).uniq
 
     all_emails.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_later
+      EventMailer.comment(event, comment, mail).deliver_now
     end
   end
 end
