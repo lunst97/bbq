@@ -1,13 +1,6 @@
-<% if photo.photo.url.present? %>
-  <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}
-  #{
-    link_to(
-      fa_icon('trash'), event_photo_path(photo.event, photo),
-      method: :delete,
-      data: { confirm: t('.destroy_confirm')}
-    )}" %>
-  <div class="event-photo buffer-top">
-    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
-                data: { lightbox: 'event-photo', title: image_title } %>
-  </div>
-<% end %>
+<div class="event-photo buffer-both">
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
+              data: { lightbox: 'event-photo', title: image_title } %>
+
+  Добавил <%= render partial: 'users/user', object: photo.user %>
+</div>
