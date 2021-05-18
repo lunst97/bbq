@@ -1,5 +1,21 @@
-<div class="event-photo buffer-both">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+<% delete =
+     link_to(
+       content_tag('span', fa_icon('trash')),
+       event_photo_path(photo.event, photo),
+       method: :delete,
+       data: { confirm: t('controllers.photos.delete_ask') })
+%>
 
-  Добавил <%= render partial: 'users/user', object: photo.user %>
-</div>
+<% title =
+     "Добавил #{render partial: 'users/user', object: photo.user}"
+%>
+
+<% title << delete if current_user_can_edit?(photo)%>
+
+<%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
+            data: {
+              toggle: 'lightbox',
+              title: title,
+              gallery: 'example-gallery',
+            }
+%>
