@@ -6,7 +6,7 @@
                       style: "background-image: url(#{event_photo(@event)})" %>
 
       <div class="event-info-inner row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="event-description">
             <h1 class="mt-3 mb-3"><%= @event.title %></h1>
             <h3 class=""><%= l @event.datetime, format: :long %></h3>
@@ -20,6 +20,9 @@
               <%= link_to 'Удалить событие', @event, method: :delete, class: 'btn btn-danger', data: { confirm: t('activerecord.attributes.event.confirmation') } %>
             </div>
           <% end %>
+        </div>
+        <div class="col-md-4">
+          <div class="event-map" id="map" data-address="<%= @event.address %>"></div>
         </div>
       </div>
     </div>
