@@ -13,6 +13,7 @@ gem 'webpacker', '~> 5.0'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
+gem 'aws-sdk'
 gem 'mailjet'
 gem 'dotenv-rails'
 
