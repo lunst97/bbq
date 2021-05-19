@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="event-photos">
-        <% if @event.subscribers.pluck(:email).include?(current_user.email) || @event.user == current_user %>
+        <% if @event.subscribers.pluck(:email).include?(current_user&.email) || @event.user == current_user %>
           <div class="event-photo-form">
             <h4 class="pt-2">Изменить фото:</h4>
             <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
