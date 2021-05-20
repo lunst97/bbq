@@ -10,7 +10,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   else
     storage :file
   end
-  
+
   # Папка, в которой будут храниться все наши загруженные файлы
   # например, uploads/avatar/avatar/1
   def store_dir
