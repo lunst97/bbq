@@ -1,6 +1,8 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   # Подключим RMagick, чтобы можно было менять размер автарок
   # и делать миниатюрные версии
+
+  # Файлы хранятся в спец. папке проекта локально
   include CarrierWave::RMagick
 
   if Rails.env.production?
@@ -9,8 +11,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  # Файлы хранятся в спец. папке проекта локально
-  storage :file
 
   # Папка, в которой будут храниться все наши загруженные файлы
   # например, uploads/avatar/avatar/1

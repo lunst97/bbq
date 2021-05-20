@@ -9,9 +9,6 @@ class PhotoUploader < CarrierWave::Uploader::Base
     storage :file
   end
 
-  # Изображения будут храниться локально в специальной папке проекта
-  storage :file
-
   # Папка, в которой будут храниться все наши загруженные файлы
   # Например, uploads/photo/photo/1
   def store_dir
