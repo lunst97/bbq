@@ -8,14 +8,14 @@
             <h1 class="">Редактирование <%= current_user.name %></h1>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
+            <label for="exampleInputEmail1"><%= t('activerecord.attributes.user.email') %></label>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('activerecord.attributes.user.email'), class: 'form-control' %>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>В настоящее время ждем подтверждения: <%= resource.unconfirmed_email %></div>
           <% end %>
           <div class="form-group">
-            <label for="exampleInputPassword1">Пароль</label>
+            <label for="exampleInputPassword1"><%= t('activerecord.attributes.user.password') %></label>
             <% if @minimum_password_length %>
               <%= f.password_field :password, autocomplete: "new-password", placeholder: "#{t('activerecord.attributes.user.password_min_letterts_start')} #{@minimum_password_length} #{t('activerecord.attributes.user.password_min_letterts_finish')}", class: 'form-control' %>
             <% else %>
@@ -26,11 +26,11 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t('activerecord.attributes.user.password_confirmation'), class: 'form-control' %>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Введите текущий пароль</label>
+            <label for="exampleInputPassword1"><%= t('activerecord.attributes.user.current_password_write') %></label>
             <%= f.password_field :current_password, autocomplete: "current-password", placeholder: t('activerecord.attributes.user.current_password'), class: 'form-control' %>
           </div>
           <div class="text-center">
-            <%= f.submit "Редактировать", class: 'btn btn-primary m-1' %>
+            <%= f.submit t('activerecord.attributes.user.edit'), class: 'btn btn-primary m-1' %>
           </div>
           <div class="col-md-12 ">
             <div class="login-or">
@@ -39,10 +39,10 @@
             </div>
           </div>
           <div class="text-center">
-            <%= link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
+            <%= link_to t('activerecord.attributes.user.delete_profile'), registration_path(resource_name), data: { confirm: "Вы действительно хотите удалить #{current_user.name}?" }, method: :delete, class: 'btn btn-sm btn-danger m-1' %>
           </div>
           <div class="text-center">
-            <%= link_to "Вернуться", :back, class: 'btn btn-link m-1' %>
+            <%= link_to t('activerecord.attributes.user.back'), :back, class: 'btn btn-link m-1' %>
           </div>
         </main>
       </section>

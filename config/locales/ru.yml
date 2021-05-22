@@ -19,11 +19,16 @@ ru:
         name: 'Имя'
         avatar: 'Аватар'
         password: 'Пароль'
+        current_password_write: 'Введите текущий пароль'
         current_password: 'Текущий пароль'
         password_confirmation: 'Подтверждение пароля'
         password_min_letterts_start: 'Пароль (минимум'
         password_min_letterts_finish: 'символов)'
         remember_me: 'Запомнить меня'
+        edit: 'Редактировать'
+        delete_profile: 'Удалить аккаунт'
+        back: 'Вернуться'
+
       event:
         body: 'Комментарий'
         title: 'Название'
@@ -71,15 +76,22 @@ ru:
   views:
     partials:
       form_errors: 'В вышей форме'
+    pincode:
+      pin: 'Пинкод'
+      pin_wrigth: 'Введите пин-код'
+      submit: 'Подтвердить'
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  photo:
+    photo:
+      added: 'Добавил'
   event_mailer:
     comment:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
     subscription:
       title: 'Новая подписка'
@@ -87,11 +99,17 @@ ru:
       email: 'Email'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
     photo:
       title: 'Новое фото'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Дата и время'
       owner: 'Организатор'
+    mailer:
+      greeting: 'Здравствуйте, '
+      instruction: 'Вы (или кто-то еще) запросили изменение пароля. Для изменения пароля нажмите ссылку ниже:'
+      action: 'Изменить пароль'
+      instruction_2: 'Если вы не запрашивали изменение пароля - проигнорируйте это сообщение'
+      instruction_3: 'Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый.'

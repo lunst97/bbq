@@ -7,7 +7,7 @@
 %>
 
 <% title =
-     "Добавил #{render partial: 'users/user', object: photo.user}"
+     "#{t('photo.photo.added')} #{render partial: 'users/user', object: photo.user}"
 %>
 
 <% title << delete if current_user_can_edit?(photo)%>
