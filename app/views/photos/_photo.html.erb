@@ -3,11 +3,11 @@
        content_tag('span', fa_icon('trash')),
        event_photo_path(photo.event, photo),
        method: :delete,
-       data: { confirm: t('controllers.photos.delete_ask') })
+       data: { confirm: t('photo.sure') })
 %>
 
 <% title =
-     "#{t('photo.photo.added')} #{render partial: 'users/user', object: photo.user}"
+     "#{t('photo.added')} #{render partial: 'users/user', object: photo.user}"
 %>
 
 <% title << delete if current_user_can_edit?(photo)%>

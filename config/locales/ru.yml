@@ -1,97 +1,120 @@
 ru:
+  # Перевод моделей
   activerecord:
-    errors:
-      models:
-        subscription:
-          attributes:
-            base:
-              errors_user_email_subscription: 'такой email уже существует'
-              check_for_self_subscription: 'вы не можете подписаться на своё событие'
+    # Перевод названия моделей
     models:
       user: 'Пользователь'
       event: 'Событие'
       subscription: 'Подписка'
       comment: 'Комментарий'
       photo: 'Фотография'
+
+    # Перевод названий аттрибутов моделей
     attributes:
       user:
         email: 'Email'
         name: 'Имя'
-        avatar: 'Аватар'
-        password: 'Пароль'
-        current_password_write: 'Введите текущий пароль'
-        current_password: 'Текущий пароль'
-        password_confirmation: 'Подтверждение пароля'
-        password_min_letterts_start: 'Пароль (минимум'
-        password_min_letterts_finish: 'символов)'
-        remember_me: 'Запомнить меня'
         edit: 'Редактировать'
-        delete_profile: 'Удалить аккаунт'
+        avatar: 'Фотография пользователя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        password_min_letterts_start: 'Пароль ( минимум'
+        password_min_letterts_finish: 'символов )'
+        current_password_write: 'Подтверждение пароля'
+        delete_profile: 'Удалить профиль'
         back: 'Вернуться'
-
+        remember_me: 'Запомнить меня'
       event:
-        body: 'Комментарий'
         title: 'Название'
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
-        pincode: 'Пинкод'
-        confirmation: 'Вы действительно хотите удалить событие?'
+        pincode: 'Пин-код доступа'
+        body: 'Комментарий:'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+      subscription:
+        user_name: 'Ваше имя'
+        user_email: 'Ваш email'
       photo:
         photo: 'Фотография'
-      subscriptions:
-        errors_user_subscription: 'Нельзя подписываться на свое событие!'
-        errors_user_email_subscription: 'Такой email уже зарегистрирован!'
+        upload_photo: 'Добавить фотографию'
+      pincode:
+        plas: 'Введите пин-код'
+        submit: 'Подтвердить'
+
+  # Перевод сообщений, которые отправляет контроллер
   controllers:
     events:
-      created: 'Событие было успешно создано'
-      updated: 'Событие было успешно обновлено'
-      destroyed: 'Событие было успешно удалено'
-      wrong_pincode: 'Неверный пинкод!'
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пин-код!'
     users:
-      updated: 'Профиль успешно обновлен'
+      updated: 'Вы обновили свой профиль'
     comments:
       destroyed: 'Комментарий удален'
-      created: ' Ваш комментарий добавлен'
+      created: 'Ваш комментарий добавлен'
       error: 'Ошибка с комментарием'
+      updated: 'Комментарий сохранен'
     subscriptions:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
     photos:
-      error: 'Что-то пошло не так с фоткой'
+      error: 'Что-то не так с фоткой'
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
-      delete_ask: 'Вы точно хотите удалить фото ?'
+
+  errors:
+    self_email_used: 'Вы не можете подписаться на свое событие'
+    try_change_email: 'Вам нужно войти, чтобы использовать этот адрес'
+
+  # Перевод названия приложения и компании-разработчика
   app:
     name: 'Шашлыки'
     company: 'Хороший программист 2021'
-  mistake:
+
+  # Переводим и склоняем ошибки
+  error:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+
+  # Удаляем события
+  event:
+    destroy: 'Удалить событие'
+
+  photo:
+    destroy: 'Удалить фото'
+    sure: 'Вы уверены, что хотите удалить это фото ?'
+    added: 'Добавил'
+
+  events:
+    form:
+      title: 'Название'
+      address: 'Место проведения'
+
+  # Подтверждение действий
+  confirm:
+    are_you_sure: 'Вы уверены?'
+
   comments:
     comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий'
-  views:
-    partials:
-      form_errors: 'В вышей форме'
-    pincode:
-      pin: 'Пинкод'
-      pin_wrigth: 'Введите пин-код'
-      submit: 'Подтвердить'
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-  photo:
-    photo:
-      added: 'Добавил'
+
   event_mailer:
     comment:
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Дата и время'
+      datetime: 'Дата события'
       owner: 'Организатор'
     subscription:
       title: 'Новая подписка'
@@ -99,17 +122,17 @@ ru:
       email: 'Email'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Дата и время'
+      datetime: 'Дата события'
       owner: 'Организатор'
     photo:
-      title: 'Новое фото'
-      author: 'Автор'
+      title: 'Новая фотография'
       event: 'Событие'
-      datetime: 'Дата и время'
+      datetime: 'Дата события'
+      author: 'Автор'
       owner: 'Организатор'
-    mailer:
-      greeting: 'Здравствуйте, '
+    reset_password:
+      greeting: 'Здравствуйте,'
       instruction: 'Вы (или кто-то еще) запросили изменение пароля. Для изменения пароля нажмите ссылку ниже:'
       action: 'Изменить пароль'
-      instruction_2: 'Если вы не запрашивали изменение пароля - проигнорируйте это сообщение'
-      instruction_3: 'Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый.'
+      instruction_1: 'Если вы не запрашивали изменение пароля - проигнорируйте это сообщение'
+      instruction_2: 'Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый.'
