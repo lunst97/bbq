@@ -110,6 +110,10 @@ ru:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
   event_mailer:
+    mailer:
+      new_photo: 'Новое фото в @'
+      new_sub: 'Новая подписка на @'
+      new_comment: 'Новый комментарий в @'
     comment:
       title: 'Новый комментарий'
       author: 'Автор'
