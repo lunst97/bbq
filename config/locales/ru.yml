@@ -1,4 +1,6 @@
 ru:
+  error:
+    from_error: 'В вашей форме'
   # Перевод моделей
   activerecord:
     # Перевод названия моделей
@@ -78,10 +80,10 @@ ru:
     company: 'Хороший программист 2021'
 
   # Переводим и склоняем ошибки
-  error:
-    one: '%{count} ошибка'
-    few: '%{count} ошибки'
-    many: '%{count} ошибок'
+  mistake:
+    one: 'В вашей форме %{count} ошибка'
+    few: 'В вашей форме %{count} ошибки'
+    many: 'В вашей форме %{count} ошибок'
 
   # Удаляем события
   event:
@@ -115,13 +117,14 @@ ru:
       new_sub: 'Новая подписка на @'
       new_comment: 'Новый комментарий в @'
     comment:
+      subject: 'Новый коментарий на @%{event_title}'
       title: 'Новый комментарий'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Дата события'
       owner: 'Организатор'
     subscription:
-      title: 'Новая подписка'
+      subject: 'Новая подписка на @%{event_title}'
       name: 'Имя'
       email: 'Email'
       author: 'Автор'
@@ -129,6 +132,7 @@ ru:
       datetime: 'Дата события'
       owner: 'Организатор'
     photo:
+      subject: 'Новое фото в @%{event_title}'
       title: 'Новая фотография'
       event: 'Событие'
       datetime: 'Дата события'
