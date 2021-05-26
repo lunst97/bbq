@@ -1,6 +1,6 @@
 ru:
   error:
-    from_error: 'В вашей форме'
+    form_error: ''
   # Перевод моделей
   activerecord:
     # Перевод названия моделей
