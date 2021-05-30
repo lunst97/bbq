@@ -3,6 +3,14 @@ ru:
     form_error: ''
   # Перевод моделей
   activerecord:
+    #  Перевод ошибок в ошибке
+    errors:
+      models:
+        subscription:
+          attributes:
+            base:
+              errors_user_email_subscription: 'эта почта уже используется'
+
     # Перевод названия моделей
     models:
       user: 'Пользователь'
@@ -10,6 +18,7 @@ ru:
       subscription: 'Подписка'
       comment: 'Комментарий'
       photo: 'Фотография'
+
 
     # Перевод названий аттрибутов моделей
     attributes:
@@ -46,6 +55,8 @@ ru:
       pincode:
         plas: 'Введите пин-код'
         submit: 'Подтвердить'
+      base:
+        errors_user_email_subscription: 'Очка'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
