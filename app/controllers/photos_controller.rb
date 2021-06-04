@@ -43,7 +43,7 @@ class PhotosController < ApplicationController
   # автоматически положат id события, которому принадлежит фотография
   # Это событие будет лежать в переменной контроллера @event
   def mailer_photo(event, new_photo)
-    emails = (event.subscribers.pluck(:email) + [event.user.email] - [new_photo.user.email]).uniq
+    emails = (event.subscriptions.pluck(:user_email) + [event.user.email] - [new_photo.user.email]).uniq
 
     emails.each do |email|
       EventMailer.photo(event, email, new_photo).deliver_now
