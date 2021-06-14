@@ -43,3 +43,5 @@ yarn-debug.log*
 /app/frontend/styles/.DS_Store
 public/uploads
 .env
+config/secrets.yml
+config/database.yml
