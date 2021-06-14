@@ -6,8 +6,8 @@ set :repo_url, "git@github.com:lunst97/bbq.git"
 
 set :deploy_to, 'home/deploy/www'
 
-set :linked_files, 'config/database.yml', 'config/secrets.yml'
-set :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
