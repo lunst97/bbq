@@ -15,6 +15,8 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
 gem 'dotenv-rails'
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
 
 group :production do
   gem 'pg'
@@ -28,4 +30,9 @@ end
 group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
 end
