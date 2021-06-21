@@ -1,12 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_event, only: [:edit, :update, :destroy, :show]
-  # before_action :set_current_user_event, only: [:edit, :update, :destroy]
-  # before_action :password_guard!, only: [:show]
 
   # GET /events
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
   # GET /events/1
