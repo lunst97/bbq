@@ -17,6 +17,7 @@ gem 'mailjet'
 gem 'dotenv-rails'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
+gem 'pundit'
 
 group :production do
   gem 'pg'
@@ -25,6 +26,9 @@ end
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails', '~>4.0.1'
 end
 
 group :development do
