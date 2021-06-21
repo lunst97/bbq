@@ -1,4 +1,8 @@
 ru:
+  pundit:
+    not_authorized: 'Вам сюда низя!'
+    error_pincode: 'Неверный пинкод!'
+    error_subscriptions: 'Подписка/отписка не сработала'
   error:
     form_error: ''
   # Перевод моделей

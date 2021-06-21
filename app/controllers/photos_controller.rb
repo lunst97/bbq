@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
     # Проставляем у фотографии пользователя
     @new_photo.user = current_user
 
+    authorize @new_photo
     if @new_photo.save
       mailer_photo(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
@@ -22,6 +23,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    authorize @photo
     message = {notice: I18n.t('controllers.photos.destroyed')}
 
     # Проверяем, может ли пользователь удалить фотографию

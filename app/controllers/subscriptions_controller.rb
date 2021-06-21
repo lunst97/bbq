@@ -7,6 +7,8 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
+    authorize @new_subscription
+
     if @new_subscription.save
       EventMailer.subscription(@event, @new_subscription).deliver_now
       # Если сохранилась, редиректим на страницу самого события
@@ -18,6 +20,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
+    authorize @subscription
     message = {notice: I18n.t('controllers.subscriptions.destroyed')}
     if current_user_can_edit?(@subscription)
       @subscription.destroy
