@@ -11,7 +11,8 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 after 'deploy:restart', 'resque:restart'
 
-set :branch, ENV['branch'] if ENV['branch']
+set :assets_roles, :webpack
+set :assets_prefix, "packs"
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
