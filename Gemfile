@@ -18,6 +18,7 @@ gem 'dotenv-rails'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 gem 'pundit'
+gem 'resque'
 
 group :production do
   gem 'pg'
