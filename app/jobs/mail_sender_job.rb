@@ -11,7 +11,7 @@ class MailSenderJob < ApplicationJob
       end
     when Photo
       all_emails.each do |email|
-        EventMailer.photo(event, email, model).deliver_later
+        EventMailer.photo(event, model, email).deliver_later
       end
     else
       EventMailer.subscription(event, model).deliver_later
