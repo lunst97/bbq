@@ -14,7 +14,9 @@ class EventsController < ApplicationController
     if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
+
     authorize @event
+
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     # Болванка модели для формы добавления фотографии
@@ -27,6 +29,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = current_user.events.build
+
     authorize @event
   end
 
@@ -39,6 +42,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     authorize @event
+
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')
     else
@@ -49,6 +53,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   def update
     authorize @event
+
     if @event.update(event_params)
       redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
@@ -59,6 +64,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   def destroy
     authorize @event
+
     @event.destroy
     redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
