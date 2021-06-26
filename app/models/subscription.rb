@@ -1,6 +1,6 @@
 class Subscription < ApplicationRecord
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :user_name, presence: true, unless: -> { user.present? }
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
@@ -32,10 +32,10 @@ class Subscription < ApplicationRecord
   end
 
   def check_user_for_duplicate_email
-    errors.add(:base, :errors_user_email_subscription) if User.find_by(email: user_email).present?
+    errors.add(:user, :errors_user_email_subscription) if User.exists?(email: user_email)
   end
 
   def check_for_self_subscription
-    errors.add(:base, :check_for_self_subscription) if event.user == user
+    errors.add(:user, :check_for_self_subscription) if event.user == user
   end
 end

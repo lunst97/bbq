@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     # Болванка для новой подписки
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
-
+    authorize @new_subscription
     if @new_subscription.save
       MailSenderJob.perform_later(@event, @new_subscription)
       # Если сохранилась, редиректим на страницу самого события
@@ -18,6 +18,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def destroy
+    authorize @subscription
     message = {notice: I18n.t('controllers.subscriptions.destroyed')}
     if current_user_can_edit?(@subscription)
       @subscription.destroy

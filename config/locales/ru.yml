@@ -12,7 +12,7 @@ ru:
       models:
         subscription:
           attributes:
-            base:
+            user:
               errors_user_email_subscription: 'эта почта уже используется'
 
     # Перевод названия моделей

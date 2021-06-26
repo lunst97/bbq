@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -22,5 +23,9 @@ class User < ApplicationRecord
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email)
                 .update_all(user_id: self.id)
+  end
+
+  def self.find_for_facebook_oauth(access_token)
+    byebug
   end
 end

@@ -49,4 +49,10 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private
+
+  def user_is_owner?(event)
+    user.present? && (event.try(:user) == user)
+  end
 end
