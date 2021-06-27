@@ -111,11 +111,10 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     address: 'in-v3.mailjet.com',
     port: '465',
-    user_name: 'news-event@bbq-events.ru',
-    password: 'SaCha050',
+    user_name: ENV["MAILJET_API_KEY"],
+    password: ENV["MAILJET_SECRET_KEY"],
     authentication: 'plain',
     enable_starttls_auto: true
   }
-  # ENV["MAILJET_API_KEY"]
-  # ENV["MAILJET_SECRET_KEY"]
+
 end

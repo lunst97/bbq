@@ -1,6 +1,11 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
+server 'bbq-events.ru', user: 'deploy', roles: %w[ app db web resque_worker]
+
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
+
 set :application, "bbq"
 set :repo_url, "git@github.com:lunst97/bbq.git"
 
