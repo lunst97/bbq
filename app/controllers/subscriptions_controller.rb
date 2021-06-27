@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription.user = current_user
 
     authorize @new_subscription
-    
+
     if @new_subscription.save
       MailSenderJob.perform_later(@event, @new_subscription)
       # Если сохранилась, редиректим на страницу самого события
