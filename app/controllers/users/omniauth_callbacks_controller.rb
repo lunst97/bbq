@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def omniauth_provider
     # Дёргаем метод модели, который найдёт пользователя
-    @user = User.find_for_facebook(request.env['omniauth.auth'])
+    @user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
     # Если юзер есть, то логиним и редиректим на его страницу
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: 'Facebook')
