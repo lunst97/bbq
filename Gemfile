@@ -6,6 +6,7 @@ ruby '2.7.2'
 gem "omniauth"
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 gem 'devise'
 gem 'devise-i18n'
 gem 'puma', '~> 5.0'
