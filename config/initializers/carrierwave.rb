@@ -11,6 +11,6 @@ if Rails.env.production?
       region:                'eu-central-1'
     }
 
-    config.fog_directory  = ENV['S3_SECRET_KEY']
+    config.fog_directory  = ENV['S3_BUCKET_NAME']
   end
 end
