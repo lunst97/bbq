@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  def send_device_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_leter
+  end
+
   def self.find_for_oauth(access_token)
     email = access_token.info.email
     user = where(email: email).first
