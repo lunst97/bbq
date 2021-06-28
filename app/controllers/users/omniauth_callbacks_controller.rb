@@ -1,10 +1,10 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    omniauth_provider('facebook')
+    omniauth_provider('Facebook')
   end
 
   def vkontakte
-    omniauth_provider('vkontakte')
+    omniauth_provider('Vkontakte')
   end
   private
 
