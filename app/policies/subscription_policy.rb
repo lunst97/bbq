@@ -1,6 +1,6 @@
 class SubscriptionPolicy < ApplicationPolicy
   def create?
-    true
+    user_have_permission_sub?
   end
 
   def destroy?
