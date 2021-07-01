@@ -1,11 +1,13 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  PROVIDERS = { VK: 'vkontakte', FB: 'facebook' }.freeze
   def facebook
-    omniauth_provider('facebook')
+    omniauth_provider(PROVIDERS[:FB])
   end
 
   def vkontakte
-    omniauth_provider('vkontakte')
+    omniauth_provider(PROVIDERS[:VK])
   end
+
   private
 
   def omniauth_provider(provider)
