@@ -14,10 +14,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  def send_device_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_leter
-  end
-
   def self.find_for_oauth(access_token)
     email = access_token.info.email
     user = where(email: email).first
@@ -29,15 +25,22 @@ class User < ApplicationRecord
 
     case provider
     when 'facebook'
+      image_url = access_token.info.image.gsub('http://','https://')
       url = "https://facebook.com/#{id}"
     when 'vkontakte'
+      image_url = access_token.extra.raw_info.photo_400_orig.gsub('http://','https://')
       url = "https://vk.com/id#{id}"
     end
 
     where(url: url, provider: provider).first_or_create! do |user|
+      user.remote_avatar_url = image_url
       user.email = email
       user.password = Devise.friendly_token.first(16)
     end
+  end
+
+  def send_device_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_leter
   end
 
   private
