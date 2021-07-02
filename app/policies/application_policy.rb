@@ -59,7 +59,7 @@ class ApplicationPolicy
     return false unless event.subscribers.pluck(:email).include?(user&.email)
     return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
 
-    false
+    true
   end
 
   def user_have_permission?
@@ -68,7 +68,7 @@ class ApplicationPolicy
     return true if event.user == user
     return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
 
-    false
+    true
   end
 
   def user_is_owner?(event)
