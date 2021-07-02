@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
 
+  after_action :verify_authorized, except: %w[create destroy]
   # Обратите внимание: фотку может сейчас добавить даже неавторизованный пользовать
   # Смотрите домашки!
   def create
@@ -10,6 +11,8 @@ class PhotosController < ApplicationController
 
     # Проставляем у фотографии пользователя
     @new_photo.user = current_user
+
+    authorize @new_photo
 
     if @new_photo.save
       MailSenderJob.perform_later(@event, @new_photo)
@@ -22,6 +25,8 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    authorize @photo
+
     message = {notice: I18n.t('controllers.photos.destroyed')}
 
     # Проверяем, может ли пользователь удалить фотографию

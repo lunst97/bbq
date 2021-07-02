@@ -14,7 +14,10 @@ ru:
           attributes:
             user:
               errors_user_email_subscription: 'эта почта уже используется'
-
+        photo:
+          attributes:
+            user:
+              required: 'Извините, но без подписки нельзя загружать фото.'
     # Перевод названия моделей
     models:
       user: 'Пользователь'

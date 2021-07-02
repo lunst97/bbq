@@ -1,4 +1,4 @@
-class SubscriptionPolicy < ApplicationPolicy
+class CommentPolicy < ApplicationPolicy
   def create?
     user_have_permission?
   end

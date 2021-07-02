@@ -1,6 +1,6 @@
-class SubscriptionPolicy < ApplicationPolicy
+class PhotoPolicy < ApplicationPolicy
   def create?
-    user_have_permission?
+    user_can_upload_photo?
   end
 
   def destroy?

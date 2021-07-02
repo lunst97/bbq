@@ -2,6 +2,8 @@ class SubscriptionsController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_subscription, only: [:destroy]
 
+  after_action :verify_authorized, except: %w[create destroy]
+
   def create
     # Болванка для новой подписки
     @new_subscription = @event.subscriptions.build(subscription_params)

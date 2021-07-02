@@ -52,13 +52,22 @@ class ApplicationPolicy
 
   private
 
-  def user_have_permission_sub?
+  def user_can_upload_photo?
+    event = record.event
+
+    return true if event.subscribers.pluck(:email).include?(user&.email) || event.user == user
+    return true if event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+
+    false
+  end
+
+  def user_have_permission?
     event = record.event
 
     return true if event.user == user
-    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+    return true if event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
 
-    true
+    false
   end
 
   def user_is_owner?(event)
