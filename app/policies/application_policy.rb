@@ -55,8 +55,9 @@ class ApplicationPolicy
   def user_can_upload_photo?
     event = record.event
 
-    return true if event.subscribers.pluck(:email).include?(user&.email) || event.user == user
-    return true if event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+    return true if event.user == user
+    return false unless event.subscribers.pluck(:email).include?(user&.email)
+    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
 
     false
   end
@@ -65,7 +66,7 @@ class ApplicationPolicy
     event = record.event
 
     return true if event.user == user
-    return true if event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
 
     false
   end
