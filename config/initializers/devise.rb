@@ -272,7 +272,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, Rails.application.secrets.omniauth_facebook_id, Rails.application.secrets.omniauth_facebook_secret, callback_url: 'https://bbq-events.ru/users/auth/facebook/callback'
+  config.omniauth :facebook, Rails.application.secrets.omniauth_facebook_id, Rails.application.secrets.omniauth_facebook_secret, callback_url: 'https://bbq-events.ru/users/auth/facebook/callback', image_size: 'large'
   config.omniauth :vkontakte, Rails.application.secrets.omniauth_vkontakte_key, Rails.application.secrets.omniauth_vkontakte_secret, callback_url: 'https://bbq-events.ru/users/auth/vkontakte/callback', scope: 'email, photo'
 
   # ==> Warden configuration
