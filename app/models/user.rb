@@ -15,7 +15,6 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def self.find_for_oauth(access_token)
-    binding.pry
     email = access_token.info.email
     user = where(email: email).first
 
