@@ -24,3 +24,8 @@ ____
 - Локализовано с помощью [I18n](http://rusrails.ru/rails-internationalization-i18n-api)
 - Стили оформлены через [bootstrap](https://getbootstrap.com/)
 - Фотогалерея, организованна через [lightbox](http://ashleydw.github.io/lightbox/)
+
+### Как пользоваться:
+Для того чтобы попробовать приложение у себя на локальной машине, вам нужно:
+1. Склонировать моё приложение к себе на комьютер.
+`git clone `
