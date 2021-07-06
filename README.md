@@ -70,3 +70,19 @@ ____
     omniauth_vkontakte_key: x
     omniauth_vkontakte_secret: x
   ```
+- Все где `x` нужно заменить на свои данные из [facebook](https://developers.facebook.com/) и [vk](https://vk.com/dev)
+
+5. Далее нужно в корневой папке bbq создать файл `.env`
+  ```
+  MAILJET_API_KEY = ''
+  MAILJET_SECRET_KEY = ''
+  MAILJET_SENDER = ''
+  YANDEX_API = ''
+  S3_ACCESS_KEY = ''
+  S3_SECRET_KEY = ''
+  S3_BUCKET_NAME = ''
+  ```
+6. Теперь осталось просто написать команду: `rails s`\
+7. И запустить `bin/webpack-dev-server` webpack сервер.
+
+
