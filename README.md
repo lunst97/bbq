@@ -9,4 +9,4 @@ ____
 
 ### О создании события:
 
-![hippo](https://s6.gifyu.com/images/2021-07-06_16-34-58.md.gif)
+![hippo](https://s6.gifyu.com/images/2021-07-06_16-34-580ff24ce59ac9d7a7.gif)
