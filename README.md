@@ -28,3 +28,30 @@ ____
 ### Как пользоваться:
 Для того чтобы попробовать приложение у себя на локальной машине, вам нужно:
 1. Склонировать моё приложение к себе на комьютер. (`git clone git@github.com:lunst97/bbq.git`)
+2. Сделать `bundle` всех гемов (перед тем как делать, нужно перейти в папку приложения) 
+3. Далее вам нужно прогнать все миграции командой: `rails db:migrate`
+4. Чтобы приложение работало, вам нужно создать файлы `database.yml` и `secrets.yml`
+- В файле `database.yml` нужно прописать следующий код:
+  
+  ```ruby
+  default: &default
+  adapter: sqlite3
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  development:
+  «: *default
+  database: `name`
+  
+  test:
+  «: *default
+  database: `name`
+
+  production:
+  adapter: postgresql
+  user: `user vps`
+  password: `password database`
+  database: `name`
+  host: localhost
+  port: `port`
+  ```
