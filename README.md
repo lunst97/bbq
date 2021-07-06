@@ -18,9 +18,9 @@ ____
 - Развернуто на VPS [DigitalOcean](https://www.digitalocean.com/) (Ubuntu 20.04 + nginx + Phusion Passenger) через gem [Capistrano](https://github.com/capistrano/capistrano)
 - База данных [PostgreSQL](https://www.postgresql.org/) для локального хранения данных
 - Хранилище пользовательских данных и фотографий, организованное на [Amazon S3 AWS](https://aws.amazon.com/ru/s3/) c помощью [carrierwave](https://github.com/carrierwaveuploader/carrierwave) и [rmagic](https://github.com/rmagick/rmagick) gems
-- Служба [Mailjet](https://www.mailjet.com/) для отправки электронной почты в фоновых заданиях с использованием Resque + Redis
-- Авторизация в приложении через gem pundit
-- OAuth2-стандартная авторизация через аккаунты в социальных сетях Facebook и ВКонтакте
-- Локализовано с помощью I18n
-- Загрузился через bootstrap-5.0.0
-- Фотогалерея, организованная через лайтбокс-галерею
+- Служба [Mailjet](https://www.mailjet.com/) для отправки электронной почты в фоновых заданиях с использованием [Resque](https://github.com/resque/resque) + [Redis](https://redis.io/)
+- Авторизация в приложении через gem [pundit](https://github.com/varvet/pundit)
+- [OAuth2](https://oauth.net/2/) - стандартная авторизация через аккаунты в социальных сетях Facebook и ВКонтакте
+- Локализовано с помощью [I18n](http://rusrails.ru/rails-internationalization-i18n-api)
+- Стили оформлены через [bootstrap](https://getbootstrap.com/)
+- Фотогалерея, организованна через [lightbox](http://ashleydw.github.io/lightbox/)
