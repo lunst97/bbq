@@ -73,7 +73,7 @@ ____
 - Все где `x` нужно заменить на свои данные из [facebook](https://developers.facebook.com/) и [vk](https://vk.com/dev)
 
 5. Далее нужно в корневой папке bbq создать файл `.env`
-  ```
+  ```yml
   MAILJET_API_KEY = ''
   MAILJET_SECRET_KEY = ''
   MAILJET_SENDER = ''
@@ -85,4 +85,7 @@ ____
 6. Теперь осталось просто написать команду: `rails s`\
 7. И запустить `bin/webpack-dev-server` webpack сервер.
 
+## О версиях.
+`Rails` - 6.1.3.1
+`Ruby` - 2.7.2
 
