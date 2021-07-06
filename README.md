@@ -57,16 +57,16 @@ ____
   ```
 - В файле `secrets.yml` нужно прописать следующий код:
   ```yml
-  development:
-    omniauth_facebook_id: 
-    omniauth_facebook_secret: 
-    omniauth_vkontakte_key:
-    omniauth_vkontakte_secret: 
+  development: x
+    omniauth_facebook_id: x
+    omniauth_facebook_secret: x
+    omniauth_vkontakte_key: x
+    omniauth_vkontakte_secret: x
 
   production:
-    secret_key_base: 
-    omniauth_facebook_id: 
-    omniauth_facebook_secret: 
-    omniauth_vkontakte_key: 
-    omniauth_vkontakte_secret: 
+    secret_key_base: x
+    omniauth_facebook_id: x
+    omniauth_facebook_secret: x
+    omniauth_vkontakte_key: x
+    omniauth_vkontakte_secret: x
   ```
