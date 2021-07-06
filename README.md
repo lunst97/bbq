@@ -33,25 +33,40 @@ ____
 4. Чтобы приложение работало, вам нужно создать файлы `database.yml` и `secrets.yml`
 - В файле `database.yml` нужно прописать следующий код:
   
-  ```ruby
+  ```yml
   default: &default
-  adapter: sqlite3
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    adapter: sqlite3
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   development:
-  «: *default
-  database: `name`
+    «: *default
+    database: `name`
   
   test:
-  «: *default
-  database: `name`
+    «: *default
+    database: `name`
 
   production:
-  adapter: postgresql
-  user: `user vps`
-  password: `password database`
-  database: `name`
-  host: localhost
-  port: `port`
+    adapter: postgresql
+    user: `user vps`
+    password: `password database`
+    database: `name`
+    host: localhost
+    port: `port`
+  ```
+- В файле `secrets.yml` нужно прописать следующий код:
+  ```yml
+  development:
+    omniauth_facebook_id: 
+    omniauth_facebook_secret: 
+    omniauth_vkontakte_key:
+    omniauth_vkontakte_secret: 
+
+  production:
+    secret_key_base: 
+    omniauth_facebook_id: 
+    omniauth_facebook_secret: 
+    omniauth_vkontakte_key: 
+    omniauth_vkontakte_secret: 
   ```
