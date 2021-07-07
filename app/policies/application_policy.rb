@@ -52,6 +52,10 @@ class ApplicationPolicy
 
   private
 
+  def user_can_delete?
+    record.event.user == user || (record.user == user && user.present?)
+  end
+
   def user_can_upload_photo?
     event = record.event
 

@@ -4,7 +4,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_owner?(record)
+    user_can_delete?
   end
 
   class Scope < Scope
