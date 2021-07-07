@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
     authorize @new_comment
     if @new_comment.save
-      MailSenderJob.sender_mail(@event, @new_comment)
+      MailSenderJob.perform_later(@event, @new_comment)
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
       render 'events/show', alert: I18n.t('controllers.comments.error')

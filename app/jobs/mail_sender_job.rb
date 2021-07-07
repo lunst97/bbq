@@ -1,7 +1,7 @@
 class MailSenderJob < ApplicationJob
   queue_as :default
 
-  def self.sender_mail(event, model)
+  def perform(event, model)
     all_emails = (event.subscriptions.pluck(:user_email) + [event.user.email] - [model.user&.email]).uniq
 
     case model
