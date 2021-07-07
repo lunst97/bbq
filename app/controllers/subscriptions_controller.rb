@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
     authorize @new_subscription
 
     if @new_subscription.save
-      MailSenderJob.perform_later(@event, @new_subscription)
+      MailSenderJob.sender_mail(@event, @new_subscription)
       # Если сохранилась, редиректим на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
