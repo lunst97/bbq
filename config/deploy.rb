@@ -1,16 +1,16 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-server 'bbq-events.ru', user: 'deploy', roles: %w[ app db web resque_worker]
-
 set :application, "bbq"
 set :repo_url, "git@github.com:lunst97/bbq.git"
+set :deploy_user, 'deploy'
 
 set :deploy_to, '/home/deploy/apps/bbq'
 
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
+after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'resque:restart'
 
 set :assets_roles, :webpack
