@@ -1,5 +1,3 @@
-require "resque_web"
-
 Rails.application.routes.draw do
   resources :photos
   resources :subscriptions
