@@ -42,7 +42,7 @@
                    locals: { comment: @new_comment || @event.comments.build } %>
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
-                     collection: @event.comments.except(@new_comment) %>
+                     collection: policy_scope(@event.comments.except(@new_comment)) %>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
           <div>
             <p>
               <%= render partial: 'subscriptions/subscription',
-                         collection: @event.subscriptions.except(@new_subscription) %>
+                         collection: policy_scope(@event.subscriptions.except(@new_subscription)) %>
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@
         <% if @event.photos.count != 0 %>
           <div class="event-photos-gallery">
             <h4 class="pt-2">История изменения фото:</h4>
-            <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+            <%= render partial: 'photos/photo', collection: policy_scope(@event.photos.except(@new_photo)) %>
           </div>
         <% end %>
       </div>

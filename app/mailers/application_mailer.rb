@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'news-event@bbq-events.ru'
+  default from: ENV['MAILJET_SENDER']
   layout 'mailer'
 end
