@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
     authorize @new_photo
 
     if @new_photo.save
-      MailSenderJob.perform_later(@event, @new_photo)
+      MailSenderJob.perform(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
