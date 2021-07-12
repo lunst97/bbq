@@ -1,5 +1,3 @@
-require "resque_web"
-
 Rails.application.routes.draw do
   resources :photos
   resources :subscriptions
@@ -17,8 +15,6 @@ Rails.application.routes.draw do
     # Добавляем вот эту строку
     post :show, on: :member
   end
-
-  mount ResqueWeb::Engine => "/resque_web"
 
   root "events#index"
 end
