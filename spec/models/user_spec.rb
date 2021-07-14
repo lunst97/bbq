@@ -21,7 +21,6 @@ Rails.describe User, type: :model do
 
       context 'when user is found by email' do
         let!(:existing_user) { create(:user, email: '123456@gmail.com') }
-        let!(:some_other_user) { create(:user) }
 
         it 'returns this user' do
           expect(User.find_for_facebook_oauth(access_token)).to eq existing_user
@@ -33,7 +32,6 @@ Rails.describe User, type: :model do
           create(:user, provider: 'facebook',
                  url: 'https://facebook.com/3016196958667390')
         end
-        let!(:some_other_user) {create(:user)}
 
         it 'returns this user' do
           expect(User.find_for_facebook_oauth(access_token)).to eq existing_user

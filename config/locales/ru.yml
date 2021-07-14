@@ -1,6 +1,6 @@
 ru:
   pundit:
-    not_authorized: 'Вам сюда низя!'
+    not_authorized: 'Вы не авторизованы!'
     error_pincode: 'Неверный пинкод!'
     error_subscriptions: 'Подписка/отписка не сработала'
   error:
