@@ -23,7 +23,7 @@ gem 'ed25519'
 gem 'bcrypt_pbkdf'
 gem 'pundit'
 gem 'resque'
-gem 'resque-web', github: 'resque/resque-web', branch: 'resque-2', require: 'resque_web'
+gem 'resque-web', require: 'resque_web'
 
 group :production do
   gem 'pg'
