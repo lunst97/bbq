@@ -1,10 +1,12 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
   resources :photos
   resources :subscriptions
   resources :comments
 
-  mount Resque::Server.new, :at => '/resque'
-  
+  mount Resque::Server.new, :at => "/resque"
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:show, :edit, :update]
