@@ -1,10 +1,7 @@
-require "resque_web"
-
 Rails.application.routes.draw do
   resources :photos
   resources :subscriptions
   resources :comments
-  mount ResqueWeb::Engine => "/resque_web"
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
