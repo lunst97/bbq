@@ -5,20 +5,20 @@ class EventMailer < ApplicationMailer
     @name = subscription.user_name
     @event = event
 
-    mail to: event.user.email, subject: default_i18n_subject(event_title: event.title)
+    mail to: event.user.email, from: ENV['MAILJET_SENDER'], subject: default_i18n_subject(event_title: event.title)
   end
 
   def comment(event, comment, email)
     @comment = comment
     @event = event
 
-    mail to: email, subject: default_i18n_subject(event_title: event.title)
+    mail to: email, from: ENV['MAILJET_SENDER'], subject: default_i18n_subject(event_title: event.title)
   end
 
   def photo(event, photo, email)
     @event = event
     @photo = photo
 
-    mail to: email, subject: default_i18n_subject(event_title: event.title)
+    mail to: email, from: ENV['MAILJET_SENDER'], subject: default_i18n_subject(event_title: event.title)
   end
 end
