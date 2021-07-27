@@ -33,7 +33,6 @@ module Bbq
     config.i18n.locale = :en
 
     config.generators.system_tests = nil
-    config.action_mailer.delivery_method = :mailjet
 
     config.generators do |g|
       g.fixture_replacement :factory_bot, dir: "spec/factories"
