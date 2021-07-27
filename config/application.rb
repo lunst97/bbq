@@ -22,14 +22,6 @@ Bundler.require(*Rails.groups)
 
 Dotenv::Railtie.load
 
-MAILJET_API_KEY = ENV['MAILJET_API_KEY']
-MAILJET_SECRET_KEY = ENV['MAILJET_SECRET_KEY']
-MAILJET_SENDER = ENV['MAILJET_SENDER']
-YANDEX_API = ENV['YANDEX_API']
-S3_ACCESS_KEY = ENV['S3_ACCESS_KEY']
-S3_SECRET_KEY = ENV['S3_SECRET_KEY']
-S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
-
 module Bbq
   class Application < Rails::Application
 

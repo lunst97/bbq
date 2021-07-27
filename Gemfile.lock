@@ -171,6 +171,10 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     ipaddress (0.8.3)
     jwt (2.2.3)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     loofah (2.10.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -387,6 +391,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   fog-aws
+  letter_opener
   mailjet
   omniauth
   omniauth-facebook

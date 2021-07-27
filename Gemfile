@@ -24,7 +24,6 @@ gem 'bcrypt_pbkdf'
 gem 'pundit'
 gem 'resque'
 
-
 group :production do
   gem 'pg'
 end
@@ -35,6 +34,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'rspec-rails', '~>4.0.1'
+  gem 'letter_opener'
 end
 
 group :development do
