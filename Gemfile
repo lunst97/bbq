@@ -23,6 +23,7 @@ gem 'ed25519'
 gem 'bcrypt_pbkdf'
 gem 'pundit'
 gem 'resque'
+gem 'sidekiq'
 
 group :production do
   gem 'pg'
@@ -35,6 +36,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'rspec-rails', '~>4.0.1'
   gem 'letter_opener'
+  gem 'capistrano-sidekiq'
 end
 
 group :development do
