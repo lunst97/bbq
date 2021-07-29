@@ -7,10 +7,28 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server 'bbq-events.ru', user: 'deploy', roles: %w[app db web resque_worker]
+server 'bbq-events.ru', user: 'deploy', roles: %w[app db web worker]
 
-set :resque_environment_task, true
-set :workers, { "#{fetch(:application)}*" => 1 }
+
+namespace :sidekiq do
+
+  task :restart do
+    invoke 'sidekiq:stop'
+    invoke 'sidekiq:start'
+  end
+
+  before 'deploy:finished', 'sidekiq:restart'
+
+  task :start do
+    on roles(:app) do
+      within current_path do
+        execute :bundle, "exec sidekiq -e #{fetch(:stage)} -C config/sidekiq.yml -d"
+      end
+    end
+  end
+end
+# set :resque_environment_task, true
+# set :workers, { "bbq*" => 1 }
 # role-based syntax
 # ==================
 

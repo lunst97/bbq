@@ -18,12 +18,12 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
-gem 'dotenv-rails'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 gem 'pundit'
 gem 'resque'
-
+gem 'sidekiq'
 
 group :production do
   gem 'pg'
@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'rspec-rails', '~>4.0.1'
+  gem 'letter_opener'
+  gem 'capistrano-sidekiq'
 end
 
 group :development do

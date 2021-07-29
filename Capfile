@@ -14,7 +14,6 @@ require "capistrano/deploy"
 # or
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
-
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
@@ -39,6 +38,7 @@ require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano-resque'
+require 'capistrano/sidekiq'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.7.2'
