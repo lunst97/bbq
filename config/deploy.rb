@@ -12,6 +12,13 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 after 'deploy:restart', 'resque:restart'
 
+namespace :sidekiq do
+  task :start do
+    run "cd app/bbq/current && bundle exec sidekiq -e production -C config/sidekiq.yml"
+    p capture("ps aux | grep sidekiq | awk '{print $2}' | sed -n 1p").strip!
+  end
+end
+
 set :assets_roles, :webpack
 set :assets_prefix, "packs"
 # Default branch is :master
