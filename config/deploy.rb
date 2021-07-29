@@ -14,7 +14,11 @@ after 'deploy:restart', 'resque:restart'
 
 namespace :sidekiq do
   task :start do
+<<<<<<< HEAD
     run "cd app/bbq/current && bundle exec sidekiq -e production -C config/sidekiq.yml"
+=======
+    run "cd app/bbq/current && bundle exec sidekiq -e production -C config/sidekiq.yml &"
+>>>>>>> 35e3cbfc534214229a73e0b9dd7b93417f8909b8
     p capture("ps aux | grep sidekiq | awk '{print $2}' | sed -n 1p").strip!
   end
 end
