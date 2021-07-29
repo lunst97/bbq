@@ -11,10 +11,7 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 after 'deploy:restart', 'resque:restart'
-after 'deploy:starting', 'sidekiq:quiet'
-after 'deploy:updated', 'sidekiq:stop'
-after 'deploy:reverted', 'sidekiq:stop'
-after 'deploy:published', 'sidekiq:start'
+after 'deploy:published', 'sidekiq:restart'
 
 set :assets_roles, :webpack
 set :assets_prefix, "packs"

@@ -9,8 +9,8 @@
 
 server 'bbq-events.ru', user: 'deploy', roles: %w[app db web worker]
 
-set :resque_environment_task, true
-set :workers, { "bbq*" => 1 }
+# set :resque_environment_task, true
+# set :workers, { "bbq*" => 1 }
 # role-based syntax
 # ==================
 
